@@ -1,0 +1,16 @@
+{{ define "main" }}
+<section class="hero">
+  <img src="{{ "images/heroimage.jpeg" | relURL }}" alt="Hero Image" class="hero-image">
+  <div class="hero-content">
+    <h1>I'm Ashley.</h1>
+    <p>Welcome to me figuring it out. All of it.</p>
+  </div>
+</section>
+<section class="section">
+  <main class="container">
+    {{ range first 5 .Site.RegularPages }}
+    {{ .Render "summary" }}
+    {{ end }}
+  </main>
+</section>
+{{ end }}

@@ -1,0 +1,6 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'Figuring it Out'
+theme = "ananke"
+resourceDir = "../resources"
+
