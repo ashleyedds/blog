@@ -1,0 +1,16 @@
+{{ define "main" }}
+<main>
+  <section class="hero about-hero">
+    <img src="{{ "images/geometric.png" | relURL }}" alt="Hero Image"
+    class="hero-image" />
+    <div class="hero-content">
+      <img src="{{ "images/selfie.jpg" | relURL }}" alt="Hero Image"
+      class="about_image" />
+      <h1 class="about-hero-text">My name is Ashley Edds.</h1>
+      <p class="about-hero-text">Let me tell you a little about myself.</p>
+    </div>
+  </section>
+
+  <article class="content">{{ .Content }}</article>
+</main>
+{{ end }}

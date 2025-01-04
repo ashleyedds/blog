@@ -1,0 +1,330 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@400;500;700&display=swap");
+
+/* Color theme definitions */
+:root {
+  /* Primary Colors */
+  --primary-teal: #005f56; /* Deep Teal for primary background */
+  --primary-dark-green: #1b4d3e; /* Dark Green alternative */
+  --accent-gold: #c69c6d; /* Muted Gold for accents */
+
+  /* Secondary Colors */
+  --secondary-sage: #a5b8a0; /* Muted Sage for links, buttons */
+  --secondary-olive: #6d7c3a; /* Olive Green for accents */
+  --text-light: #f1f1f1; /* Off-White for main text */
+  --text-dark: #333333; /* Dark Charcoal for text and borders */
+
+  /* Neutral Colors */
+  --neutral-beige: #d1c6b1; /* Beige for warm neutrals */
+  --neutral-taupe: #b79f91; /* Taupe for accent neutrals */
+
+  /* Hover and Interaction Colors */
+  --hover-dark: #005c8e; /* Darker shade of teal/green for hover */
+  --hover-light: #c69c6d; /* Lighter Gold for hover effect */
+}
+
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/* Global theme application */
+
+html {
+  font-family: "Roboto", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600; /* Or any other weight you prefer */
+}
+
+body {
+  background-color: var(--primary-teal);
+  color: var(--text-light);
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  color: var(--secondary-sage);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: var(--hover-light);
+}
+
+.button {
+  background-color: var(--secondary-sage);
+  color: var(--text-dark);
+  border: 2px solid var(--secondary-sage);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--hover-light); /* Hover background for buttons */
+  color: var(--text-light); /* White text on hover */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+hr {
+  border-color: var(--secondary-sage); /* Horizontal rule in muted sage */
+}
+
+input,
+select,
+textarea {
+  background-color: var(--text-dark); /* Dark background for form elements */
+  color: var(--text-light); /* Light text color */
+  border: 1px solid var(--secondary-sage); /* Muted Sage border for form fields */
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+  border-color: var(--hover-light); /* Gold hover effect for form fields */
+}
+
+.hero {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-content {
+  max-height: 100%;
+  padding: 1rem; 
+  box-sizing: border-box;
+}
+
+/* Homepage styles */
+
+.homepage_hero {
+  position: relative;
+  height: 55vh;
+  background-color: #333; /* Fallback background color */
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers the area */
+  object-position: 0% 30%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.homepage_hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3); /* Transparent dark gray overlay */
+  z-index: 1; /* Place the overlay above the image, but below the text */
+}
+
+.homepage_hero .hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  z-index: 2; /* Make sure text is above the overlay */
+}
+
+.homepage_hero h1 {
+  font-size: 3rem;
+}
+
+.homepage_hero p {
+  font-size: 1.5rem;
+}
+
+.hero-content {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+.cta_hero {
+  padding: 12px 24px; /* Larger button */
+  font-size: 1rem; /* Increase font size */
+}
+
+.cta_hero:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Bio section */
+.bio_image {
+  width: 150px;
+  height: 150px;
+  max-width: 150px;
+  max-height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+
+/* Navbar styles */
+.navbar,
+.navbar-menu {
+  background-color: #222222;
+  color: #f0f0f0;
+}
+
+.navbar a {
+  color: var(--secondary-sage);
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  color: var(--hover-light);
+}
+
+.navbar-brand {
+  font-family: "Poppins";
+  font-weight: 600;
+}
+
+.navbar-burger {
+  display: flex;
+  flex-direction: column;
+}
+
+.fa-compass {
+  margin-left: 5px;
+}
+
+/* Posts List */
+
+.posts-list-section {
+  height: 100vh;
+}
+
+/* Posts */
+
+.post-hero {
+  position: relative;
+  height: 55vh;
+  background-color: #333; /* Fallback background color */
+}
+
+.post-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.featured-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers the area */
+  object-position: 0% 30%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* About Me */
+.about-hero {
+  position: relative;
+  height: 55vh;
+  background-color: #333; /* Fallback background color */
+}
+
+.about-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3); /* Transparent dark gray overlay */
+  z-index: 1; /* Place the overlay above the image, but below the text */
+}
+
+.about-hero .hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  z-index: 2; /* Make sure text is above the overlay */
+}
+
+.about_image{
+  width: 30vw;
+  height: auto;
+  aspect-ratio: 1;
+  max-width: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about-hero-text {
+  width: 80vw;
+  padding: 0 10px;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.about-hero-image {
+  width: 100%;
+  padding: 0 10px;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .about-hero-text {
+    padding: 10px;
+  }
+
+  .about-hero-text {
+    font-size: 1.5rem;
+  }
+
+
+  .about-hero-image {
+    padding: 10px;
+  }
+
+  .about_image {
+    max-width: 150px;
+    max-height: 150px;
+  }
+}
+
+

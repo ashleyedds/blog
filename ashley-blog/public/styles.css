@@ -1,44 +1,162 @@
-.hero {
-    position: relative;
-    height: 50vh;
-    background-color: #333; /* Fallback background color */
-  }
-  
-  .hero-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensure the image covers the area */
-    object-position: 0% 30%;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-  
-  .hero::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Transparent dark gray overlay */
-    z-index: 1; /* Place the overlay above the image, but below the text */
-  }
-  
-  .hero-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    text-align: center;
-    z-index: 2; /* Make sure text is above the overlay */
-  }
-  
-  .hero h1 {
-    font-size: 3rem;
-  }
-  
-  .hero p {
-    font-size: 1.5rem;
-  }
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@400;500;700&display=swap");
+
+/* Color theme definitions */
+:root {
+  /* Primary Colors */
+  --primary-teal: #005F56; /* Deep Teal for primary background */
+  --primary-dark-green: #1B4D3E; /* Dark Green alternative */
+  --accent-gold: #C69C6D; /* Muted Gold for accents */
+
+  /* Secondary Colors */
+  --secondary-sage: #A5B8A0; /* Muted Sage for links, buttons */
+  --secondary-olive: #6D7C3A; /* Olive Green for accents */
+  --text-light: #F1F1F1; /* Off-White for main text */
+  --text-dark: #333333; /* Dark Charcoal for text and borders */
+
+  /* Neutral Colors */
+  --neutral-beige: #D1C6B1; /* Beige for warm neutrals */
+  --neutral-taupe: #B79F91; /* Taupe for accent neutrals */
+
+  /* Hover and Interaction Colors */
+  --hover-dark: #005C8E; /* Darker shade of teal/green for hover */
+  --hover-light: #C69C6D; /* Lighter Gold for hover effect */
+}
+
+/* Global theme application */
+
+html {
+  font-family: "Roboto", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600; /* Or any other weight you prefer */
+}
+
+body {
+  background-color: var(--primary-teal);
+  color: var(--text-light);
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  color: var(--secondary-sage);
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  color: var(--hover-light);
+}
+
+.button {
+  background-color: var(--secondary-sage); 
+  color: var(--text-dark); 
+  border: 2px solid var(--secondary-sage); 
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--hover-light); /* Hover background for buttons */
+  color: var(--text-light); /* White text on hover */
+}
+
+hr {
+  border-color: var(--secondary-sage); /* Horizontal rule in muted sage */
+}
+
+input, select, textarea {
+  background-color: var(--text-dark); /* Dark background for form elements */
+  color: var(--text-light); /* Light text color */
+  border: 1px solid var(--secondary-sage); /* Muted Sage border for form fields */
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+input:hover, select:hover, textarea:hover {
+  border-color: var(--hover-light); /* Gold hover effect for form fields */
+}
+
+
+/* Homepage styles */
+
+.homepage_hero {
+  position: relative;
+  height: 55vh;
+  background-color: #333; /* Fallback background color */
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers the area */
+  object-position: 0% 30%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.homepage_hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3); /* Transparent dark gray overlay */
+  z-index: 1; /* Place the overlay above the image, but below the text */
+}
+
+.homepage_hero .hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  z-index: 2; /* Make sure text is above the overlay */
+}
+
+.homepage_hero h1 {
+  font-size: 3rem;
+}
+
+.homepage_hero p {
+  font-size: 1.5rem;
+}
+
+/* Navbar styles */
+.navbar, .navbar-menu {
+  background-color: #222222; 
+  color: #f0f0f0;
+}
+
+.navbar a {
+  color: var(--secondary-sage);
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  color: var(--hover-light);
+}
+
+.navbar-brand {
+  font-family: "Poppins";
+  font-weight: 600;
+}
+
+.navbar-burger {
+  display: flex;
+  flex-direction: column;
+}
+
+.fa-compass {
+  margin-left: 5px;
+}
+

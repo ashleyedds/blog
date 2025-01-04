@@ -1,18 +1,26 @@
-<nav class="navbar is-dark">
-    <div class="container">
-      <div class="navbar-brand">
-        <a class="navbar-item" href="/">
-          {{ $.Site.Title }}
-        </a>
-      </div>
-  
-      <div class="navbar-start">
-        <a class="navbar-item" href="/">
-          Home
-        </a>
-        <a class="navbar-item" href="/posts">
-          Posts
-        </a>
-      </div>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/">
+      {{ $.Site.Title }} <i class="fa-solid fa-compass"></i>
+    </a>
+
+    <a
+      role="button"
+      class="navbar-burger is-hidden-desktop"
+      aria-label="menu"
+      aria-expanded="false"
+    >
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" href="/"> Home </a>
+      <a class="navbar-item" href="/posts"> Posts </a>
+      <a class="navbar-item" href="/about"> About </a>
     </div>
-  </nav>
+  </div>
+</nav>

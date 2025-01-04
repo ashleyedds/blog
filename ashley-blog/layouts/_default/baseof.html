@@ -1,18 +1,37 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
-    <link rel="stylesheet" href="/styles.css">
-    {{ partial "navbar.html" . }}
-    <title>{{ block "title" . }}
-      {{ .Site.Title }}
-    {{ end }}</title>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/icons/favicon.ico" type="image/x-icon">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="{{ "/css/styles.css" | relURL }}">
+    <title>{{ block "title" . }} {{ .Site.Title }} {{ end }}</title>
   </head>
   <body>
-    {{ block "main" . }}
-      <!-- The part of the page that begins to differ between templates -->
-    {{ end }}
-    {{ partial "footer.html" . }}
+    {{ partial "navbar.html" . }}
+    <main>
+      {{ block "main" . }}
+    </main>
+    <!-- The part of the page that begins to differ between templates -->
+    {{ end }} {{ partial "footer.html" . }}
   </body>
 </html>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const burger = document.querySelector(".navbar-burger");
+    const menu = document.querySelector(".navbar-menu");
+
+    burger.addEventListener("click", () => {
+      burger.classList.toggle("is-active");
+      menu.classList.toggle("is-active");
+    });
+  });
+</script>

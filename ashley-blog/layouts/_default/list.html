@@ -1,12 +1,13 @@
 {{ define "main" }}
-<section class="section">
-  <main class="container">
-    <h1 class="title">{{ .Title }}</h1>
-    <div>
-      {{ range .Pages }}
-      {{ .Render "summary" }}
-      {{ end }}
-    </div>
-  </main>
-</section>
+<div class="columns">
+  <div class="column is-two-thirds">
+    <section class="section posts-list-section">
+      <main class="container posts-lists-bkgrnd">
+        <h1 class="title">{{ .Title }}</h1>
+        <div>{{ range .Pages }} {{ .Render "summary" }} {{ end }}</div>
+      </main>
+    </section>
+  </div>
+</div>
 {{ end }}
+

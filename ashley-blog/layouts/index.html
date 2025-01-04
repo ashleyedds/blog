@@ -1,16 +1,70 @@
 {{ define "main" }}
-<section class="hero">
-  <img src="{{ "images/heroimage.jpeg" | relURL }}" alt="Hero Image" class="hero-image">
+<section class="hero homepage_hero">
+  <img src="{{ "images/heroimage.jpeg" | relURL }}" alt="Hero Image"
+  class="hero-image" />
   <div class="hero-content">
-    <h1>I'm Ashley.</h1>
-    <p>Welcome to me figuring it out. All of it.</p>
+    <h1 style="margin-bottom: 10px">I'm Ashley.</h1>
+    <p style="margin-bottom: 10px">Come along while I try to figure it out.</p>
+    <button class="button cta_hero">Follow Along</button>
   </div>
 </section>
+
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h2 class="title is-2">Welcome to my little space on the internet.</h2>
+      <p style="line-height: 1.8">
+        Here, you'll find a collection of ramblings and thoughts—some
+        half-baked, others a bit more polished—about the everyday adventure of
+        learning, growing, and trying to make life a bit more meaningful. I’ll
+        write about all sorts of things: what I’m discovering about being a
+        better leader, mother, wife, friend, and how to juggle it all. But it’s
+        not just about the roles we play—it's about the little moments, the
+        lessons, and the quirks that shape our journeys.
+      </p>
+      <p style="line-height: 1.8; margin-top: 15px; margin-bottom: 10px">
+        And yes, I’ll be using generative AI to help me shape some of these
+        words, because sometimes even the best ideas need a little digital
+        nudge. Consider this space an experiment, a place to reflect,
+        and—hopefully—a space where you’ll find something that resonates with
+        your own story. Glad you're here to join me in the process!
+      </p>
+      <a class="button cta_home" href="#about">Learn More</a>
+    </div>
+  </div>
+</section>
+
 <section class="section">
-  <main class="container">
-    {{ range first 5 .Site.RegularPages }}
-    {{ .Render "summary" }}
-    {{ end }}
-  </main>
+  <div class="container">
+    <div class="columns has-1-cols-mobile">
+      <!-- Left Column: Blog Posts -->
+      <div class="column is-two-thirds">
+        <h2 class="title" style="color: var(--text-light)">Recent Blog Posts</h2>
+        <ul>
+          {{ range first 5 (where .Site.RegularPages "Type" "!=" "about") }} {{
+          .Render "summary" }} {{ end }}
+        </ul>
+      </div>
+
+      <!-- Right Column: Personal Bio -->
+      <div class="column bio_column is-one-third">
+        <div class="container has-text-centered">
+          <img class="bio_image" src="{{ "images/bio_image.jpeg" | relURL }}"
+          alt="Hero Image" />
+          <p>
+            Hi, I’m Ashley. I’m figuring it out—both in my career and in life.
+            I’m a software engineering leader, constantly navigating the
+            challenges of leadership, tech, and personal growth. Outside of
+            work, I’m a mother, wife, daughter, friend, traveler, and someone
+            who enjoys a good nap, baking, and finding new experiences. This
+            site is where I share what I’ve learned so far, the mistakes I’ve
+            made, and the ideas I’m still exploring. If you’re also in the
+            process of figuring it out, I’d love for you to join me on this
+            journey. Let’s learn together.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 {{ end }}
