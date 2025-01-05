@@ -1,4 +1,4 @@
-baseURL = 'https://ashleyedds.dev/'
+baseURL = 'https://ashleyedds.github.io/blog/'
 languageCode = 'en-us'
 title = 'Figuring it Out'
 theme = "ananke"
